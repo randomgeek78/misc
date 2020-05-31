@@ -3,4 +3,5 @@
 set -o vi
 alias condafastai='conda activate fastai'
 alias jupnb='jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root'
+alias coursenlp='git clone https://github.com/randomgeek78/course-nlp.git --depth 1'
 source ~/.gitalias
