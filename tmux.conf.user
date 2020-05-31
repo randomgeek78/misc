@@ -36,13 +36,13 @@ bind-key -n C-S-Right swap-window -t +1
 #unbind p
 #bind p paste-buffer
 setw -g mode-keys vi
-#bind-key -t vi-copy 'v' begin-selection
-#bind-key -t vi-copy 'y' copy-selection
-#bind-key -t vi-copy 'V' rectangle-toggle
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind-key -t vi-copy 'r' rectangle-toggle
 #bind Space choose-buffer
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-selection
-bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+# bind-key -T copy-mode-vi v send-keys -X begin-selection
+# bind-key -T copy-mode-vi y send-keys -X copy-selection
+# bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
 
 # Maximizing windows temporarily
 # http://superuser.com/questions/238702/maximizing-a-pane-in-tmux
