@@ -1,3 +1,5 @@
+init:
+	conda activate fastai
 
 jupnb:
-  jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root
+	jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root
