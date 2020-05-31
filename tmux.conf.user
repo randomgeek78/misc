@@ -1,0 +1,53 @@
+#if-shell "uname | grep -q Darwin" "" "source-file $HOME/.yadr/tmux/recipes/tmux.conf.user_p1"
+#if-shell "uname | grep -q Darwin" "" "bind C-l send-keys 'C-l'"
+
+# https://github.com/christoomey/
+# Restoring Clear Screen (C-l)
+#bind-key -n C-l send-keys 'C-l'
+#
+#https://stackoverflow.com/questions/14731760/how-do-i-clear-tmux-screen-while-tailing-logs
+#bind -n C-l send-keys -R \; send-keys "Enter"
+
+# monitor for silence
+# setw monitor-silence 30
+
+# To identify all quiet windows in the session, apply the setting to all windows:
+# setw -g monitor-silence 30
+
+# don't rename windows automatically
+set-option -g allow-rename off
+
+# Local config
+# http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+# if-shell "[ -f ~/.tmux.conf.theme1 ]" 'source ~/.tmux.conf.theme1'
+
+# My own theme
+if-shell "[ -f ~/.tmux.conf.theme2 ]" 'source ~/.tmux.conf.theme2'
+
+# swap-window -s 3 -t 1 # swaps windows 3 and 1
+# http://superuser.com/questions/343572/how-do-i-reorder-tmux-windows
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
+
+# Copy-paste
+# http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/
+#unbind [
+#bind Escape copy-mode
+#unbind p
+#bind p paste-buffer
+setw -g mode-keys vi
+#bind-key -t vi-copy 'v' begin-selection
+#bind-key -t vi-copy 'y' copy-selection
+#bind-key -t vi-copy 'V' rectangle-toggle
+#bind Space choose-buffer
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+
+# Maximizing windows temporarily
+# http://superuser.com/questions/238702/maximizing-a-pane-in-tmux
+# Use prefix Z (toggle maximize current window)
+#
+
+bind C-l send-keys 'C-l'
+
