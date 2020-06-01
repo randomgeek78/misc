@@ -1,7 +1,8 @@
 
 # setting from fastai/bashrc
 set -o vi
-alias condafastai='conda activate fastai'
-alias jupnb='jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root'
-alias coursenlp='git clone https://github.com/randomgeek78/course-nlp.git --depth 1'
+alias cf='conda activate fastai'
+alias jnb='jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root --no-browser'
+alias gcl='git clone https://github.com/randomgeek78/course-nlp.git --depth 1'
+alias jtext='jupytext --set-formats ipynb,py:percent *.ipynb'
 source ~/.gitalias
